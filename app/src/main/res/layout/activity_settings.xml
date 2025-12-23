@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingTop="5dp">
+        android:layout_gravity="center_vertical"
+        android:layout_marginBottom="24dp"
+        >
 
         <Button
-            app:iconGravity="textStart"
-            android:paddingTop="8dp"
-            android:layout_width="30dp"
+            android:gravity="center"
+            android:layout_marginVertical="4dp"
+            android:layout_width="24dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:background="@android:color/transparent"
@@ -26,14 +28,16 @@
             app:iconTint="@color/text_black"
             android:id="@+id/sets_back"/>
         <TextView
+            android:layout_marginVertical="4dp"
             android:paddingHorizontal="12dp"
-            android:paddingTop="8dp"
+            android:paddingTop="10dp"
+            android:paddingBottom="12dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_weight="10"
+            android:layout_weight="9"
             android:text="@string/menu_sets"
             android:textColor="@color/text_black"
-            android:textSize="26sp"
+            android:textSize="22sp"
             android:textStyle="bold"/>
 
     </LinearLayout>
@@ -42,25 +46,25 @@
         android:layout_height="wrap_content"
         android:background="@color/btn_back_white"
         android:orientation="horizontal"
-        android:paddingVertical="10dp"
-        android:layout_marginTop="24dp"
+        android:gravity="center_vertical"
         >
         <TextView
+            android:paddingVertical="21dp"
             android:gravity="center_vertical"
-            android:paddingHorizontal="12dp"
+            android:paddingHorizontal="@dimen/sets_padd_hor"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/dark_mode"
             android:textColor="@color/text_black"
-            android:textSize="20sp"
+            android:textSize="@dimen/sets_text_size"
             />
+
         <androidx.appcompat.widget.SwitchCompat
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:height="48dp"
-            />
+            android:layout_height="16dp"
+            android:height="16dp"
+            android:gravity="center_vertical" />
 
     </LinearLayout>
     <LinearLayout
@@ -68,22 +72,24 @@
         android:layout_height="wrap_content"
         android:background="@color/btn_back_white"
         android:orientation="horizontal"
-        android:paddingVertical="10dp"
+
+        android:gravity="center_vertical"
         >
         <TextView
+            android:paddingVertical="@dimen/sets_padd_ver"
             android:gravity="center_vertical"
-            android:paddingHorizontal="12dp"
+            android:paddingHorizontal="@dimen/sets_padd_hor"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/share_app"
             android:textColor="@color/text_black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/sets_text_size" />
         <Button
             app:iconGravity="textStart"
-            android:paddingTop="8dp"
-            android:layout_width="44dp"
-            android:layout_height="match_parent"
+
+            android:layout_width="40dp"
+            android:layout_height="22dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
             app:icon="@drawable/share"
@@ -95,22 +101,23 @@
         android:layout_height="wrap_content"
         android:background="@color/btn_back_white"
         android:orientation="horizontal"
-        android:paddingVertical="10dp">
+
+        android:gravity="center_vertical">
         <TextView
             android:gravity="center_vertical"
-            android:paddingHorizontal="12dp"
-            android:paddingTop="8dp"
+            android:paddingHorizontal="@dimen/sets_padd_hor"
+            android:paddingVertical="@dimen/sets_padd_ver"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/txt_sprt"
             android:textColor="@color/text_black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/sets_text_size" />
         <Button
             app:iconGravity="textStart"
-            android:paddingTop="8dp"
-            android:layout_width="44dp"
-            android:layout_height="match_parent"
+
+            android:layout_width="40dp"
+            android:layout_height="22dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
             app:icon="@drawable/tech_sprt"
@@ -122,22 +129,24 @@
         android:layout_height="wrap_content"
         android:background="@color/btn_back_white"
         android:orientation="horizontal"
-        android:paddingVertical="10dp">
+
+        android:gravity="center_vertical">
+
         <TextView
-            android:gravity="start"
-            android:paddingHorizontal="12dp"
-            android:paddingTop="8dp"
+            android:gravity="center_vertical"
+            android:paddingHorizontal="@dimen/sets_padd_hor"
+            android:paddingVertical="@dimen/sets_padd_ver"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/usr_agree"
             android:textColor="@color/text_black"
-            android:textSize="20sp" />
+            android:textSize="@dimen/sets_text_size" />
         <Button
             app:iconGravity="textStart"
-            android:paddingTop="8dp"
-            android:layout_width="44dp"
-            android:layout_height="match_parent"
+
+            android:layout_width="40dp"
+            android:layout_height="22dp"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
             app:icon="@drawable/nextarrow"
