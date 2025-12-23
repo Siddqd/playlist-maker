@@ -14,25 +14,24 @@
         android:text="@string/app_name"
         android:textColor="@color/white"
         android:textSize="25sp"
-        android:paddingVertical="4dp"
-        android:paddingHorizontal="4dp"
+        android:padding="4dp"
         android:layout_marginBottom="20dp"/>
 
     <Button
         android:id="@+id/btn_srch"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="8dp"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="@dimen/margin_main_ver"
+        android:layout_marginHorizontal="@dimen/margin_main_hor"
         android:layout_weight="1"
         android:backgroundTint="@color/btn_back_white"
         android:text="@string/menu_search"
         android:textColor="@color/text_black"
-        android:radius="16dp"
+        android:radius="@dimen/corner_rad"
         app:icon="@drawable/search"
         app:iconGravity="textStart"
         app:iconTint="@color/black"
-        app:cornerRadius="16dp"
+        app:cornerRadius="@dimen/corner_rad"
         android:foreground="?attr/selectableItemBackground"
     />
 
@@ -40,134 +39,35 @@
         android:id="@+id/btn_media"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="8dp"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="@dimen/margin_main_ver"
+        android:layout_marginHorizontal="@dimen/margin_main_hor"
         android:layout_weight="1"
         android:backgroundTint="@color/btn_back_white"
         android:text="@string/menu_media"
         android:textColor="@color/text_black"
-        android:radius="16dp"
+        android:radius="@dimen/corner_rad"
         app:icon="@drawable/mediatech"
         app:iconGravity="textStart"
         app:iconTint="@color/black"
-        app:cornerRadius="16dp"
+        app:cornerRadius="@dimen/corner_rad"
         android:foreground="?attr/selectableItemBackground"
         />
     <Button
         android:id="@+id/btn_sets"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginVertical="8dp"
-        android:layout_marginHorizontal="16dp"
+        android:layout_marginVertical="@dimen/margin_main_ver"
+        android:layout_marginHorizontal="@dimen/margin_main_hor"
         android:layout_weight="1"
         android:backgroundTint="@color/btn_back_white"
         android:text="@string/menu_sets"
         android:textColor="@color/text_black"
-        android:radius="16dp"
+        android:radius="@dimen/corner_rad"
         app:icon="@drawable/options"
         app:iconGravity="textStart"
         app:iconTint="@color/black"
-        app:cornerRadius="16dp"
+        app:cornerRadius="@dimen/corner_rad"
         android:foreground="?attr/selectableItemBackground"
         />
 
 </LinearLayout>
-
-
-
-
-    <!--?xml version="1.0" encoding="utf-8"?>
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:id="@+id/main"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hello World!"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-    </androidx.constraintlayout.widget.ConstraintLayout-->
-
-
-<!--?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#1A1B22"
-    android:orientation="vertical"
-    android:padding="20dp">
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="start"
-            android:text="Вопрос:"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="2/10"
-            android:textColor="#ffffff"
-            android:textSize="20sp" />
-    </FrameLayout>
-
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/poster" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginHorizontal="63dp"
-        android:layout_marginTop="33dp"
-        android:gravity="center"
-        android:text="Рейтинг этого фильма больше чем 9?"
-        android:textColor="#ffffff"
-        android:textSize="23sp"
-        android:textStyle="bold" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginEnd="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#ffffff"
-            android:text="Нет"
-            android:textColor="#1A1B22" />
-
-        <Button
-            android:layout_width="0dp"
-            android:layout_height="60dp"
-            android:layout_marginStart="10dp"
-            android:layout_weight="1"
-            android:backgroundTint="#ffffff"
-            android:text="Да"
-            android:textColor="#1A1B22" />
-    </LinearLayout>
-</LinearLayout-->
