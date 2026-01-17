@@ -7,4 +7,7 @@
     <string name="share_app" translatable="false">Поделиться приложением</string>
     <string name="txt_sprt" translatable="false">Написать в поддержку</string>
     <string name="usr_agree" translatable="false">Пользовательское соглашение</string>
+    <string name="url_ya_pr_android" translatable="false">https://practicum.yandex.ru/android-developer/</string>
+    <string name="tech_mail" translatable="false">seedim@yandex.ru</string>
+    <string name="url_usr_agree" translatable="false">https://yandex.ru/legal/practicum_offer/ru/</string>
 </resources>

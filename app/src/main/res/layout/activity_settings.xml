@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/btn_back_white"
+    android:background="?attr/colorPrimary"
     android:orientation="vertical"
     android:id="@+id/main"
     >
@@ -13,6 +13,7 @@
         android:orientation="horizontal"
         android:layout_gravity="center_vertical"
         android:layout_marginBottom="24dp"
+        android:background="?attr/colorPrimary"
         >
 
         <Button
@@ -23,10 +24,10 @@
             android:layout_weight="1"
             android:background="@android:color/transparent"
             android:backgroundTint="@android:color/transparent"
-            android:textColor="@color/text_black"
+            android:textColor="?attr/colorOnPrimary"
             app:icon="@drawable/arrowback"
-            app:iconTint="@color/text_black"
-            android:id="@+id/sets_back"/>
+            app:iconTint="?attr/colorOnPrimary"
+            android:id="@+id/btn_back"/>
         <TextView
             android:layout_marginVertical="4dp"
             android:paddingHorizontal="12dp"
@@ -36,7 +37,7 @@
             android:layout_height="match_parent"
             android:layout_weight="9"
             android:text="@string/menu_sets"
-            android:textColor="@color/text_black"
+            android:textColor="?attr/colorOnPrimary"
             android:textSize="22sp"
             android:textStyle="bold"/>
 
@@ -44,114 +45,70 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btn_back_white"
         android:orientation="horizontal"
         android:gravity="center_vertical"
         >
+
         <TextView
-            android:paddingVertical="21dp"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="@dimen/sets_padd_hor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/dark_mode"
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/sets_text_size"
-            />
+            style="@style/SettingsTextView"
+            android:text="@string/dark_mode" />
 
         <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switch_dark"
             android:layout_width="wrap_content"
             android:layout_height="16dp"
             android:height="16dp"
-            android:gravity="center_vertical" />
+            android:gravity="center_vertical"
+            app:theme="@style/SwitchStyle" />
 
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btn_back_white"
         android:orientation="horizontal"
-
         android:gravity="center_vertical"
         >
-        <TextView
-            android:paddingVertical="@dimen/sets_padd_ver"
-            android:gravity="center_vertical"
-            android:paddingHorizontal="@dimen/sets_padd_hor"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/share_app"
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/sets_text_size" />
-        <Button
-            app:iconGravity="textStart"
 
-            android:layout_width="40dp"
-            android:layout_height="22dp"
-            android:background="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent"
-            app:icon="@drawable/share"
-            app:iconTint="@color/unactive_gray"
-            android:foreground="?attr/selectableItemBackground" />
+        <TextView
+            style="@style/SettingsTextView"
+            android:text="@string/share_app" />
+
+        <ImageView
+            android:layout_height="18dp"
+            android:id="@+id/share_btn"
+            style="@style/SettingsImgView"
+            android:src="@drawable/share"
+             />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btn_back_white"
         android:orientation="horizontal"
-
         android:gravity="center_vertical">
         <TextView
-            android:gravity="center_vertical"
-            android:paddingHorizontal="@dimen/sets_padd_hor"
-            android:paddingVertical="@dimen/sets_padd_ver"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/txt_sprt"
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/sets_text_size" />
-        <Button
-            app:iconGravity="textStart"
-
-            android:layout_width="40dp"
-            android:layout_height="22dp"
-            android:background="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent"
-            app:icon="@drawable/tech_sprt"
-            app:iconTint="@color/unactive_gray"
-            android:foreground="?attr/selectableItemBackground" />
+            style="@style/SettingsTextView"
+            android:text="@string/txt_sprt" />
+        <ImageView
+            android:layout_height="18dp"
+            android:id="@+id/tech_sprt_btn"
+            style="@style/SettingsImgView"
+            android:src="@drawable/tech_sprt"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/btn_back_white"
         android:orientation="horizontal"
-
         android:gravity="center_vertical">
-
         <TextView
-            android:gravity="center_vertical"
-            android:paddingHorizontal="@dimen/sets_padd_hor"
-            android:paddingVertical="@dimen/sets_padd_ver"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
+            style="@style/SettingsTextView"
             android:text="@string/usr_agree"
-            android:textColor="@color/text_black"
-            android:textSize="@dimen/sets_text_size" />
-        <Button
-            app:iconGravity="textStart"
+        />
 
-            android:layout_width="40dp"
-            android:layout_height="22dp"
-            android:background="@android:color/transparent"
-            android:backgroundTint="@android:color/transparent"
-            app:icon="@drawable/nextarrow"
-            app:iconTint="@color/unactive_gray"
-            android:foreground="?attr/selectableItemBackground" />
+        <ImageView
+            android:layout_height="14dp"
+            android:id="@+id/usr_agree_btn"
+            style="@style/SettingsImgView"
+            android:src="@drawable/nextarrow" />
     </LinearLayout>
-
 </LinearLayout>
