@@ -50,6 +50,7 @@
         android:layout_marginHorizontal="16dp"
         android:layout_marginTop="8dp"
         style="@style/SearchEditText"
+        android:drawableStart="@drawable/search"
         android:hint="@string/menu_search"
     />
 </LinearLayout>
