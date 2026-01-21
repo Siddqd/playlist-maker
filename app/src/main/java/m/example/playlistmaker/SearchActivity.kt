@@ -13,8 +13,21 @@ import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
 class SearchActivity : AppCompatActivity() {
+    private lateinit var searchEditText: EditText
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("search_text", searchEditText.text.toString())
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        searchEditText.setText(savedInstanceState.getString("search_text", ""))
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        searchEditText = findViewById<EditText>(R.id.edit_srch)
         enableEdgeToEdge()
         setContentView(R.layout.activity_search)
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
@@ -26,8 +39,6 @@ class SearchActivity : AppCompatActivity() {
         btnBack.setOnClickListener{
             finish()
         }
-
-        val searchEditText = findViewById<EditText>(R.id.edit_srch)
 
         // Показать/скрыть крестик при изменении текста
         searchEditText.addTextChangedListener(object : TextWatcher {

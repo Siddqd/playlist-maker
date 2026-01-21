@@ -1,7 +1,6 @@
 package m.example.playlistmaker
 
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -12,6 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.appcompat.widget.SwitchCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.net.toUri
 
 class SettingsActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,8 +57,8 @@ class SettingsActivity : AppCompatActivity() {
             val intent = Intent(Intent.ACTION_SEND).apply {
                 type = "message/rfc822" // MIME‑тип для email
                 putExtra(Intent.EXTRA_EMAIL, arrayOf(getString(R.string.tech_mail)))
-                putExtra(Intent.EXTRA_SUBJECT, "Сообщение разработчикам и разработчицам приложения Playlist Maker")
-                putExtra(Intent.EXTRA_TEXT, "Спасибо разработчикам и разработчицам за крутое приложение!")
+                putExtra(Intent.EXTRA_SUBJECT, getString(R.string.tech_mail_subj))
+                putExtra(Intent.EXTRA_TEXT, getString(R.string.tech_mail_text))
             }
 
             // Проверяем, есть ли хотя бы один почтовый клиент
@@ -75,7 +75,7 @@ class SettingsActivity : AppCompatActivity() {
 
         val usrAgreeBtn = findViewById<ImageView>(R.id.usr_agree_btn)
         usrAgreeBtn.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.url_usr_agree)))
+            val intent = Intent(Intent.ACTION_VIEW, getString(R.string.url_usr_agree).toUri())
             startActivity(intent)
         }
     }
