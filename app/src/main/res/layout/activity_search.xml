@@ -52,5 +52,6 @@
         style="@style/SearchEditText"
         android:drawableStart="@drawable/search"
         android:hint="@string/menu_search"
+        android:drawableTint="?attr/editTextHintColor"
     />
 </LinearLayout>

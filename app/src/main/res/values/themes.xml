@@ -12,6 +12,7 @@
         <item name="colorSecondaryVariant">@color/unactive_gray</item>
         <item name="colorOnPrimaryFixed">@color/light_mint</item>
         <item name="editTextRoundedBackground">@drawable/et_bckgrnd_srch_light</item>
+        <item name="editTextHintColor">@color/unactive_gray</item>
     </style>
 
 </resources>

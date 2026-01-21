@@ -41,15 +41,9 @@ class SettingsActivity : AppCompatActivity() {
         val btnShare = findViewById<ImageView>(R.id.share_btn)
         btnShare.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
-            // Установка типа намерения
             intent.type = "text/plain"
-            // Передача сообщения
             intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.url_ya_pr_android))
-            if (intent.resolveActivity(packageManager) == null) {
-                Toast.makeText(this, "Please install MSNGRS first.", Toast.LENGTH_SHORT).show()
-            } else {
-                startActivity(intent)
-            }
+            startActivity(intent)
         }
 
         val btnTechSprt = findViewById<ImageView>(R.id.tech_sprt_btn)
@@ -60,17 +54,7 @@ class SettingsActivity : AppCompatActivity() {
                 putExtra(Intent.EXTRA_SUBJECT, getString(R.string.tech_mail_subj))
                 putExtra(Intent.EXTRA_TEXT, getString(R.string.tech_mail_text))
             }
-
-            // Проверяем, есть ли хотя бы один почтовый клиент
-            if (intent.resolveActivity(packageManager) != null) {
-                startActivity(intent)
-            } else {
-                Toast.makeText(
-                    this,
-                    "Не найдено почтового клиента. Установите почтовый клиент и попробуйте снова.",
-                    Toast.LENGTH_LONG
-                ).show()
-            }
+            startActivity(intent)
         }
 
         val usrAgreeBtn = findViewById<ImageView>(R.id.usr_agree_btn)

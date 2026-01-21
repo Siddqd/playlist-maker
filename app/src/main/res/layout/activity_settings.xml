@@ -54,10 +54,10 @@
             android:text="@string/dark_mode" />
 
         <androidx.appcompat.widget.SwitchCompat
+            android:layout_marginEnd="18dp"
             android:id="@+id/switch_dark"
-            android:layout_width="wrap_content"
-            android:layout_height="16dp"
-            android:height="16dp"
+            android:layout_width="56dp"
+            android:layout_height="match_parent"
             android:gravity="center_vertical"
             app:theme="@style/SwitchStyle" />
 
@@ -74,7 +74,9 @@
             android:text="@string/share_app" />
 
         <ImageView
-            android:layout_height="18dp"
+            android:paddingVertical="3dp"
+            android:paddingHorizontal="4dp"
+            android:layout_height="24dp"
             android:id="@+id/share_btn"
             style="@style/SettingsImgView"
             android:src="@drawable/share"
@@ -89,7 +91,10 @@
             style="@style/SettingsTextView"
             android:text="@string/txt_sprt" />
         <ImageView
-            android:layout_height="18dp"
+            android:layout_height="24dp"
+            android:paddingHorizontal="2dp"
+            android:paddingTop="3.1dp"
+            android:paddingBottom="2.9dp"
             android:id="@+id/tech_sprt_btn"
             style="@style/SettingsImgView"
             android:src="@drawable/tech_sprt"
@@ -106,7 +111,9 @@
         />
 
         <ImageView
-            android:layout_height="14dp"
+            android:layout_height="24dp"
+            android:paddingHorizontal="8dp"
+            android:paddingVertical="5dp"
             android:id="@+id/usr_agree_btn"
             style="@style/SettingsImgView"
             android:src="@drawable/nextarrow" />

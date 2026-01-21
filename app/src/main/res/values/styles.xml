@@ -32,8 +32,9 @@
 
     </style>
     <style name="SettingsImgView">
-        <item name="iconGravity">textStart</item>
-        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_marginEnd">12dp</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:backgroundTint">@android:color/transparent</item>
         <item name="iconTint">?attr/colorSecondaryVariant</item>
@@ -56,6 +57,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:maxLines">1</item>
         <item name="android:textSize">16sp</item>
-        <item name="android:textColorHint">@color/light_black</item>
+
+        <item name="android:textColorHint">@color/unactive_gray</item>
     </style>
 </resources>
