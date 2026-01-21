@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="sets_padd_ver">21dp</dimen>
+    <dimen name="sets_padd_hor">16dp</dimen>
+    <dimen name="sets_text_size">16sp</dimen>
+    <dimen name="main_text_size">22sp</dimen>
+    <dimen name="margin_main_hor">16dp</dimen>
+    <dimen name="margin_main_ver">8dp</dimen>
+    <dimen name="corner_rad">16dp</dimen>
+</resources>
