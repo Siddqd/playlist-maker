@@ -1,9 +1,8 @@
 package m.example.playlistmaker
 
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.view.MotionEvent
+import android.view.inputmethod.InputMethodManager
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
@@ -26,6 +25,21 @@ class SearchActivity : AppCompatActivity() {
     override fun onRestoreInstanceState(outState: Bundle) {
         super.onRestoreInstanceState(outState)
         searchEditText.setText(outState.getString(SRCH_TXT, ""))
+
+    }
+
+    private fun showClearX(text: CharSequence?) {
+        val drawableSrch = ContextCompat.getDrawable(this@SearchActivity, R.drawable.search)
+        val drawableClr = if (!text.isNullOrEmpty()) {
+            // Показываем крестик когда есть текст
+            ContextCompat.getDrawable(this@SearchActivity, R.drawable.ic_clear_12)
+        } else {
+            // Скрываем крестик когда текст пустой
+            null
+        }
+        searchEditText.setCompoundDrawablesRelativeWithIntrinsicBounds(
+            drawableSrch, null, drawableClr, null
+        )
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,35 +51,25 @@ class SearchActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         val btnBack = findViewById<Button>(R.id.btn_back)
         btnBack.setOnClickListener{
             finish()
         }
 
         searchEditText = findViewById<EditText>(R.id.edit_srch)
-
+        showClearX(searchEditText.text)
 
         // Показать/скрыть крестик при изменении текста
-        searchEditText.doOnTextChanged { text, _, _, _ ->
-            val drawableSrch = ContextCompat.getDrawable(this@SearchActivity, R.drawable.search)
-            val drawableClr = if (!text.isNullOrEmpty()) {
-                // Показываем крестик когда есть текст
-                ContextCompat.getDrawable(this@SearchActivity, R.drawable.ic_clear_12)
-            } else {
-                // Скрываем крестик когда текст пустой
-                null
-            }
-            searchEditText.setCompoundDrawablesRelativeWithIntrinsicBounds(
-                drawableSrch, null, drawableClr, null
-            )
-        }
+        searchEditText.doOnTextChanged { text, _, _, _ ->showClearX(text)}
 
         // Обработка клика по крестику
         searchEditText.setOnTouchListener { v, event ->
             if (event.action == MotionEvent.ACTION_UP) {
                 val drawableEnd = 2 // END = 2 (для RTL проверять START = 0)
                 val drawable = searchEditText.compoundDrawablesRelative[drawableEnd]
-
+                val inputMethodManager = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+                inputMethodManager.hideSoftInputFromWindow(searchEditText.windowToken, 0)
                 if (drawable != null && event.rawX >= (searchEditText.right -
                             drawable.bounds.width() - searchEditText.paddingEnd)) {
                     searchEditText.text.clear()

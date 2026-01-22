@@ -57,7 +57,7 @@
         <item name="android:gravity">center_vertical</item>
         <item name="android:maxLines">1</item>
         <item name="android:textSize">16sp</item>
-
-        <item name="android:textColorHint">@color/unactive_gray</item>
+        <item name="android:drawableTint">?attr/editTextHintColor</item>
+        <item name="android:textColorHint">?attr/editTextHintColor</item>
     </style>
 </resources>

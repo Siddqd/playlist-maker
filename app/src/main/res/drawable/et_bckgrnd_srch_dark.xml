@@ -10,8 +10,7 @@
 
     <!-- Граница -->
     <stroke
-        android:width="1dp"
-        android:color="#CCCCCC" />
+         />
 
     <!-- Отступы внутри -->
     <!--padding
