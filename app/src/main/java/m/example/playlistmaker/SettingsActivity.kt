@@ -1,6 +1,8 @@
 package m.example.playlistmaker
 
+import android.content.Context
 import android.content.Intent
+import android.content.res.Configuration
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -14,6 +16,22 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.core.net.toUri
 
 class SettingsActivity : AppCompatActivity() {
+    fun isDarkThemeCombined(context: Context): Boolean {
+        val uiMode = context.resources.configuration.uiMode and Configuration.UI_MODE_NIGHT_MASK
+        val appCompatMode = AppCompatDelegate.getDefaultNightMode()
+
+        // Если принудительно установлен ночной режим через AppCompat
+        if (appCompatMode == AppCompatDelegate.MODE_NIGHT_YES) {
+            return true
+        }
+        // Если отключён
+        if (appCompatMode == AppCompatDelegate.MODE_NIGHT_NO) {
+            return false
+        }
+        // Иначе — смотрим системный режим
+        return uiMode == Configuration.UI_MODE_NIGHT_YES
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -30,6 +48,8 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         val switchDarkTheme = findViewById<SwitchCompat>(R.id.switch_dark)
+        switchDarkTheme.isChecked = isDarkThemeCombined(this)
+
         switchDarkTheme.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)

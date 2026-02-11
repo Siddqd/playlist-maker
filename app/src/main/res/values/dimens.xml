@@ -7,4 +7,6 @@
     <dimen name="margin_main_hor">16dp</dimen>
     <dimen name="margin_main_ver">8dp</dimen>
     <dimen name="corner_rad">16dp</dimen>
+    <dimen name="img_size">45dp</dimen>
+    <dimen name="track_container_height">61dp</dimen>
 </resources>
