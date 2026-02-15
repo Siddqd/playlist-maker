@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Объявляем кастомный атрибут -->
+    <attr name="editTextRoundedBackground" format="reference" />
+    <attr name="editTextHintColor" format="color|reference" />
+    <!-- Или можно создать атрибут для цвета -->
+    <attr name="editTextBorderColor" format="color|reference" />
+</resources>
